@@ -1,0 +1,56 @@
+---
+title: "Homework03"
+output: 
+  html_document:
+    theme: yeti
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+install.packages('tidyverse', repos = "http://cran.us.r-project.org")
+#install.packages('tidymodels', repos = "http://cran.us.r-project.org")
+install.packages('ggplot2', repos = "http://cran.us.r-project.org")
+install.packages('visdat', repos = "http://cran.us.r-project.org")
+library(tidyverse)
+library(tidymodels)
+library(ggplot2)
+library(visdat)
+```
+
+
+```{r}
+set.seed(231)
+
+data = read.csv('data/titanic.csv')
+head(data)
+```
+
+## Question 1
+```{r}
+data_split <- initial_split(data, prop = 0.70,
+                                strata = survived)
+
+data_train <- training(data_split)
+data_test <- testing(data_split)
+```
+
+```{r}
+print(c(dim(data_train), dim(data_test)))
+```
+
+```{r}
+vis_dat(data_train)
+```
+'age' and 'cabin' variables have NA. Categorical variables need to shift as dummy variables.
+
+If we do not 
+
+
+
+
+

@@ -1,10 +1,12 @@
 ---
 title: "Homework03"
-output: 
+output:
+  pdf_document:
+    toc: yes
   html_document:
     theme: yeti
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -211,32 +213,26 @@ It is quite a similar result as the train set. It could be consider that there i
 
 
 ## Question 11
-$$
-\begin{aligned}
-p &= \frac{e^z}{1+e^z}\\ 
-&= 1 - \frac{1}{1+e^z} \\
-1-p &= \frac{1}{1+e^z} \\
-1+e^z &= \frac{1}{1-p} \\
-e^z &= \frac{1}{1-p} - \frac{1-p}{1-p} \\
-e^z &= \frac{p}{1-p} \\
-z &= ln(\frac{p}{1-p})
-\end{aligned}
-$$
+
+$p = \frac{e^z}{1+e^z}$ $\\$
+$= 1 - \frac{1}{1+e^z}$ $\\$
+$1-p = \frac{1}{1+e^z}$ $\\$
+$1+e^z = \frac{1}{1-p}$ $\\$
+$e^z = \frac{1}{1-p} - \frac{1-p}{1-p}$ $\\$
+$e^z = \frac{p}{1-p}$ $\\$
+$z = ln(\frac{p}{1-p})$
+
 
 
 ## Question 12
-$$
-\begin{aligned}
-ln(\frac{p}{1-p}) &= \beta_0 + \beta_1 x_1 \\
-ln(\frac{p(y=1)}{p(y=0)}) &= \beta_0 + \beta_1 x_1 \\
 
-ln(\frac{p(y=1|x_1)}{p(y=0|x_1)}) &= \beta_0 + \beta_1 x_1 \\
-ln(\frac{p(y=1|x_1+2)}{p(y=0|x_1+2)}) &= \beta_0 + \beta_1 (x_1+2) \\
+$ln(\frac{p}{1-p}) = \beta_0 + \beta_1 x_1$ $\\$
+$ln(\frac{p(y=1)}{p(y=0)}) = \beta_0 + \beta_1 x_1$ $\\$
 
-ln(\frac{p(y=1|x_1+2)}{p(y=0|x_1+2)}) - ln(\frac{p(y=1|x_1)}{p(y=0|x_1)}) &= 2\beta_1
+$ln(\frac{p(y=1|x_1)}{p(y=0|x_1)}) = \beta_0 + \beta_1 x_1$ $\\$
+$ln(\frac{p(y=1|x_1+2)}{p(y=0|x_1+2)}) = \beta_0 + \beta_1 (x_1+2)$ $\\$
 
-\end{aligned}
-$$
+$ln(\frac{p(y=1|x_1+2)}{p(y=0|x_1+2)}) - ln(\frac{p(y=1|x_1)}{p(y=0|x_1)}) = 2\beta_1$ $\\$
 
 
 The odds ratio will increase as $e^{2\beta_1}$ if $x_1$ increase by two.
